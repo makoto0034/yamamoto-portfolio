@@ -1,0 +1,10 @@
+<%=render 'layouts/header'%>
+<div class="background-image-swiper swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><%= image_tag 'background-image1.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'background-image2.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'background-image3.jpg' %></div>
+    </div>
+</div>
+<%= javascript_include_tag 'https://unpkg.com/swiper/swiper-bundle.min.js' %>
+<%= javascript_pack_tag 'swiper' %>

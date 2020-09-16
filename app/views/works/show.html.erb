@@ -1,0 +1,14 @@
+<div class="work-show-container">
+  <div class="work-show-container-inner">
+    <div class="work-show-container-inner-close"><%=link_to'X',works_path%></div>
+    <% if @picture.id > 1 %>
+      <%=link_to'<',work_path(@picture.id - 1),class:"prev-btn"%>
+    <%end%>
+    <% if @picture.id < @number_of_pictures%>
+      <%=link_to'>',work_path(@picture.id + 1),class:"next-btn"%>
+    <%end%>
+    <div class="work-show-image">
+      <%=image_tag @picture.image.url%>
+    </div>
+  </div>
+</div>

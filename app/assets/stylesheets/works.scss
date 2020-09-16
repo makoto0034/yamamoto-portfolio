@@ -1,0 +1,108 @@
+// Place all the styles related to the works controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.work-title{
+  width: 100%;
+  height: 15vh;
+  text-align: center;
+  & h2{
+    font-size: 50px;
+    letter-spacing: 5px;
+  }
+}
+.work-container{
+  width: 100%;
+  & .work-container-inner{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    & .work-image{
+      width: calc((100% / 7) - 2px);
+      height: 180px;
+      border:solid #fff 1px;
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      &:hover{
+        overflow: visible;
+        z-index: 1;
+        & img{
+          box-shadow: 0 0 8px gray;
+        }
+      }
+      & img{
+        max-width: 160%;
+        min-width: 110%;
+        max-height: 160%;
+        min-height: 110%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+  }
+}
+
+.work-show-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: relative;
+  .work-show-container-inner{
+    width: 80%;
+    height: 80%;
+    & .work-show-container-inner-close{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      & a{
+        text-decoration: none;
+        color: #000;
+        font-size: 30px;
+      }
+    }
+    & .prev-btn,.next-btn{
+      position: absolute;
+      display: block;
+      height: 10px;
+      top: 45%;
+      color: #000;
+      font-size: 40px;
+      text-decoration: none;
+      z-index: 1;
+    }
+    & .prev-btn{
+      left: 20px;
+    }
+    & .next-btn{
+      right: 20px;
+    }
+    & .work-show-image{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in-out forwards;
+      & img{
+        width: auto;
+        height: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn{
+  100%{
+    opacity: 1;
+  }
+}

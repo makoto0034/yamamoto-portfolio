@@ -1,0 +1,93 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+$cBlack:#000;
+$cWhite:#fff;
+
+.swiper-container{
+    width: 70%;
+    margin-top: 20px;
+
+    & .swiper-wrapper{
+        & .swiper-slide{
+            img{
+                width: 100%;
+                height: auto;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+// works.html
+
+.works-title{
+    font-weight: 800;
+    text-align: center;
+}
+
+.works-container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    & .image-container{
+        width: calc((100% / 6) - 1px);
+        height: 180px;
+        overflow: hidden;
+        & img{
+            width: 100%;
+            height: auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.modal{
+    display: none;
+    &.inview{
+        display: block;
+        position: fixed;
+        left:0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    & .modal-content{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 50%;
+        height: 50%;
+        & .zoom-work-img{
+            width: 100%;
+            height: auto;
+        }
+        & .modal-close-btn{
+           position: absolute;
+           left: -20px;
+           top: -20px;
+           width: 20px;
+           height: 20px;
+           color: $cWhite;
+           font-size: 20px;
+           cursor: pointer;
+        }
+    }
+    & .modal-bg{
+        background-color:rgba(0,0,0,0.8);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+    }
+}

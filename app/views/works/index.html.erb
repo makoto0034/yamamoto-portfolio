@@ -1,0 +1,15 @@
+<%=render 'layouts/header'%>
+<div class="work-title">
+  <h2>Works</h2>
+</div>
+<div class="work-container">
+  <div class="work-container-inner">
+    <%@pictures.each do |picture|%>
+      <div class="work-image">
+        <%=link_to work_path(picture.id) do%>
+          <%=image_tag picture.image.url%>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+</div>
